@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width , initial-scale=1.0" />
+    <title>Book List</title>
+    <style>
+      .flex-y {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      body {
+        margin: 0;
+        height: 100%;
+        box-sizing: border-box;
+        padding: 10px;
+      }
+      .box {
+        border: 2px solid black;
+        border-radius: 10px;
+        box-shadow: 2px 2px 10px 0px gray;
+        padding: 20px 0;
+        margin: 10px;
+        width: 300px;
+        height: 60px;
+      }
+      .box:hover {
+        background-color: #777;
+        color: red;
+        cursor: pointer;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+      }
+    </style>
+  </head>
+  <body class="flex-y">
+    <div>
+      {% for item in books%}
+      <a href="#" target="_blank">
+        <div class="box flex-y">
+          <span>{{ item.name }}</span>
+          <span>{{ item.writer }}</span>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </body>
+</html>
